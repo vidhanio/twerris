@@ -1,5 +1,6 @@
 //! Module related to the [`User`] struct.
 
+#[cfg(test)]
 mod tests;
 
 use serde::{Deserialize, Serialize};
