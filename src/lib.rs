@@ -9,31 +9,33 @@
 #![allow(clippy::use_self)]
 #![allow(clippy::module_name_repetitions)]
 
-pub mod attachments;
-pub mod context_annotations;
-pub mod entities;
-pub mod geo;
-pub mod non_public_metrics;
-pub mod organic_metrics;
-pub mod promoted_metrics;
-pub mod public_metrics;
-pub mod referenced_tweet;
-pub mod reply_settings;
-pub mod tweet;
-pub mod tweet_data;
-pub mod tweet_id;
-pub mod tweet_includes;
-pub mod user_id;
-pub mod withheld;
+macro_rules! types {
+    ($($module:ident::$ty:ident;)+) => {
+        $(
+            pub mod $module;
+            pub use self::$module::$ty;
+        )+
+    };
+}
 
-pub use self::{
-    attachments::Attachments, context_annotations::ContextAnnotation, entities::Entities, geo::Geo,
-    non_public_metrics::NonPublicMetrics, organic_metrics::OrganicMetrics,
-    promoted_metrics::PromotedMetrics, public_metrics::PublicMetrics,
-    referenced_tweet::ReferencedTweet, reply_settings::ReplySettings, tweet::Tweet,
-    tweet_data::TweetData, tweet_id::TweetId, tweet_includes::TweetIncludes, user_id::UserId,
-    withheld::Withheld,
-};
+types! {
+    attachments::Attachments;
+    context_annotation::ContextAnnotation;
+    entities::Entities;
+    geo::Geo;
+    non_public_metrics::NonPublicMetrics;
+    organic_metrics::OrganicMetrics;
+    promoted_metrics::PromotedMetrics;
+    public_metrics::PublicMetrics;
+    referenced_tweet::ReferencedTweet;
+    reply_settings::ReplySettings;
+    tweet::Tweet;
+    tweet_data::TweetData;
+    tweet_id::TweetId;
+    tweet_includes::TweetIncludes;
+    user_id::UserId;
+    withheld::Withheld;
+}
 
 pub type Media = serde_json::Value;
 
