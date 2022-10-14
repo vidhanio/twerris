@@ -4,9 +4,9 @@ pub mod referenced_tweet_type;
 
 use serde::{Deserialize, Serialize};
 
-pub use self::referenced_tweet_type::ReferencedTweetType;
+use crate::TweetId;
 
-use super::TweetId;
+pub use self::referenced_tweet_type::ReferencedTweetType;
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct ReferencedTweet {

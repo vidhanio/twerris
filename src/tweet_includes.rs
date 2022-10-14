@@ -4,7 +4,7 @@ use serde::{Deserialize, Serialize};
 
 use crate::{Media, User};
 
-use super::TweetData;
+use crate::TweetData;
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct TweetIncludes {

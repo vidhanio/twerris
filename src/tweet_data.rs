@@ -1,28 +1,11 @@
-//! Module related to the [`TweetData`] object.
-
-pub mod attachments;
-pub mod context_annotations;
-pub mod entities;
-pub mod geo;
-pub mod non_public_metrics;
-pub mod organic_metrics;
-pub mod promoted_metrics;
-pub mod public_metrics;
-pub mod referenced_tweet;
-pub mod reply_settings;
-pub mod tweet_id;
-pub mod user_id;
-pub mod withheld;
+//! Module related to the [`TweetData`] struct.
 
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
 
-pub use self::{
-    attachments::Attachments, context_annotations::ContextAnnotation, entities::Entities, geo::Geo,
-    non_public_metrics::NonPublicMetrics, organic_metrics::OrganicMetrics,
-    promoted_metrics::PromotedMetrics, public_metrics::PublicMetrics,
-    referenced_tweet::ReferencedTweet, reply_settings::ReplySettings, tweet_id::TweetId,
-    user_id::UserId, withheld::Withheld,
+use crate::{
+    Attachments, ContextAnnotation, Entities, Geo, NonPublicMetrics, OrganicMetrics,
+    PromotedMetrics, PublicMetrics, ReferencedTweet, ReplySettings, TweetId, UserId, Withheld,
 };
 
 /// The data of a Tweet.

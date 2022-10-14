@@ -1,15 +1,11 @@
 //! Module related to the [`Tweet`] struct.
 
-pub mod data;
-pub mod includes;
-
 #[cfg(test)]
 mod tests;
 
 use serde::{Deserialize, Serialize};
 
-pub use self::data::*;
-pub use self::includes::*;
+use crate::{TweetData, TweetIncludes};
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Tweet {
