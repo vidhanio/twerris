@@ -26,17 +26,18 @@ types! {
     non_public_metrics::NonPublicMetrics;
     organic_metrics::OrganicMetrics;
     promoted_metrics::PromotedMetrics;
-    public_metrics::PublicMetrics;
+    tweet_public_metrics::TweetPublicMetrics;
     referenced_tweet::ReferencedTweet;
     reply_settings::ReplySettings;
     tweet::Tweet;
     tweet_data::TweetData;
     tweet_id::TweetId;
-    tweet_includes::TweetIncludes;
+    includes::Includes;
+    user::User;
+    user_data::UserData;
+    user_public_metrics::UserPublicMetrics;
     user_id::UserId;
     withheld::Withheld;
 }
 
 pub type Media = serde_json::Value;
-
-pub type User = serde_json::Value;

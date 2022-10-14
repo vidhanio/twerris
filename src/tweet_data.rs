@@ -5,7 +5,7 @@ use serde::{Deserialize, Serialize};
 
 use crate::{
     Attachments, ContextAnnotation, Entities, Geo, NonPublicMetrics, OrganicMetrics,
-    PromotedMetrics, PublicMetrics, ReferencedTweet, ReplySettings, TweetId, UserId, Withheld,
+    PromotedMetrics, ReferencedTweet, ReplySettings, TweetId, TweetPublicMetrics, UserId, Withheld,
 };
 
 /// The data of a Tweet.
@@ -32,7 +32,7 @@ pub struct TweetData {
     pub conversation_id: Option<TweetId>,
 
     /// Creation time of the Tweet.
-    pub created_at: DateTime<Utc>,
+    pub created_at: Option<DateTime<Utc>>,
 
     /// Entities which have been parsed out of the text of the Tweet.
     pub entities: Option<Entities>,
@@ -67,7 +67,7 @@ pub struct TweetData {
     pub promoted_metrics: Option<PromotedMetrics>,
 
     /// Public engagement metrics for the Tweet at the time of the request.
-    pub public_metrics: Option<PublicMetrics>,
+    pub public_metrics: Option<TweetPublicMetrics>,
 
     /// A list of Tweets this Tweet refers to. For example, if the parent Tweet is a Retweet, a Retweet with comment (also known as Quoted Tweet) or a Reply, it will include the related Tweet referenced to by its parent.
     pub referenced_tweets: Option<Vec<ReferencedTweet>>,

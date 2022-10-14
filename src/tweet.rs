@@ -5,10 +5,10 @@ mod tests;
 
 use serde::{Deserialize, Serialize};
 
-use crate::{TweetData, TweetIncludes};
+use crate::{Includes, TweetData};
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Tweet {
     pub data: Vec<TweetData>,
-    pub includes: TweetIncludes,
+    pub includes: Includes,
 }
