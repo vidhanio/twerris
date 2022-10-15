@@ -31,20 +31,27 @@ structs! {
     tweet_public_metrics::TweetPublicMetrics,
     referenced_tweet::ReferencedTweet,
     reply_settings::ReplySettings,
+    user_public_metrics::UserPublicMetrics,
+    withheld::Withheld,
+    includes::Includes,
+    topic_id::TopicId,
+
     space::Space,
     space_data::SpaceData,
     space_id::SpaceId,
     space_state::SpaceState,
-    topic_id::TopicId,
+
     tweet::Tweet,
     tweet_data::TweetData,
     tweet_id::TweetId,
-    includes::Includes,
+
     user::User,
     user_data::UserData,
-    user_public_metrics::UserPublicMetrics,
     user_id::UserId,
-    withheld::Withheld,
+
+    list::List,
+    list_data::ListData,
+    list_id::ListId,
 }
 
 pub type Media = serde_json::Value;
