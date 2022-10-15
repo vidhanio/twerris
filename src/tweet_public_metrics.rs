@@ -1,4 +1,4 @@
-//! Module related to the [`PublicMetrics`] struct.
+//! Module related to the [`TweetPublicMetrics`] struct.
 
 use serde::{Deserialize, Serialize};
 

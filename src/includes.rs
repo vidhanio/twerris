@@ -1,4 +1,4 @@
-//! Module related to the [`TweetIncludes`] struct.
+//! Module related to the [`Includes`] struct.
 
 use serde::{Deserialize, Serialize};
 
